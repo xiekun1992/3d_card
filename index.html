@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <style>
+            body{
+                --width: 240px;
+                --height: 380px;
+                --thick: 4px;
+                --edge-bg: rgba(71, 154, 162, 1);
+                /*background: #ece4e4;*/
+            }
+            .outer-content{
+                width: calc(var(--width) * 2);
+                height: var( --height);
+                position: absolute;
+                perspective: 2000px;
+            }
+            .outer-content>ul{
+                transform: rotateX(100deg);
+                transform: rotateY(9deg) rotateX(48deg) rotateZ(-30deg);
+                transform-style: preserve-3d;
+                left: calc(var(--width) / 2);
+                /*animation: r 20s linear infinite;*/
+            }
+            .outer-content>ul>li, .outer-content>ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                width: var(--width);
+                height: var(--height);
+            }
+            .outer-content>ul>li{
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .outer-content>ul>li:nth-child(1){
+                width: var(--thick);
+                transform: rotateY(90deg) translateZ(calc(var(--thick) / -2));
+                background: var(--edge-bg);
+            }
+            .outer-content>ul>li:nth-child(2){
+                width: var(--width);
+                height: var(--thick);
+                transform: rotateX(-90deg) translateZ(calc(var(--thick) / -2));
+                background: var(--edge-bg);
+            }
+            .outer-content>ul>li:nth-child(3){
+                width: var(--thick);
+                /*left: 38px;*/
+                left: calc(var(--width) - var(--thick) / 2);
+                transform: rotateY(-90deg);/* translateZ(calc(var(--) * -2));*/
+                background: var(--edge-bg);
+            }
+            .outer-content>ul>li:nth-child(4){
+                width: var(--width);
+                height: var(--thick);
+                /*top: 376px;*/
+                top: calc(var(--height) - var(--thick));
+                transform: rotateX(90deg) translateZ(calc(var(--thick) / -2));
+                background: var(--edge-bg);
+            }
+            .outer-content>ul>li:nth-child(5){
+                width: var(--width);
+                transform: translateZ(calc(var(--thick) / 2));
+                background-image: url('http://pic.qiantucdn.com//58pic/27/64/55/59e076fe62f07.jpg!w290');
+                background-size: contain;
+            }
+            .outer-content>ul>li:nth-child(6){
+                width: var(--width);
+                background-image: url('http://pic.qiantucdn.com//58pic/27/64/55/59e076fe62f07.jpg!w290');
+                background-size: contain;
+                transform: translateZ(calc(var(--thick) / -2));
+                box-shadow: -12px 12px 12px 0px rgba(0, 0, 0, 0.7);
+
+            }
+            .outer-cover{
+                width: 240px;
+                height: 380px;
+                position: absolute;
+                transform: skew(36deg, -28deg);
+                background: rgba(255,255,255,.35);
+                top: 194px;
+                left: 211px;
+                display: none;
+            }
+            @keyframes r{
+                from{
+                    transform: rotateX(0deg);/* rotateY(0deg);*/
+                }
+                to{
+                    transform: rotateX(360deg);/* rotateY(360deg);*/
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="outer-cover"></div>
+        <div class="outer-content">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </body>
+</html>
