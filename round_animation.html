@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .sun {
+            width: 200px;
+            height: 200px;
+            background: #ffca00;
+            border-radius: 50%;
+            position: absolute;
+            overflow: hidden;
+            box-shadow: 0 0 1px 2px #ffad00;
+        }
+        .sun:before {
+            position: absolute;
+            width: 94%;
+            height: 99%;
+            background: #f9e47a;
+            content: '';
+            top: 0;
+            left: 12px;
+            border-radius: 50%;
+        }
+        .sun:after {
+            content: '';
+            width: 20px;
+            height: 28px;
+            background: linear-gradient(#e6b831 0%, #f2cd50 114%);
+            top: 63%;
+            left: 96px;
+            z-index: 111;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .eye{
+            position: absolute;
+            top: 69px;
+            left: 60px;
+            background: #fff;
+            width: 14%;
+            height: 14%;
+            z-index: 11111;
+            border-radius: 50%;
+            animation: round 4s linear infinite;
+        }
+        .eye.left{
+            left: 60px;
+        }
+        .eye.right{
+            left: 126px;
+        }
+        .eye:before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: 2px;
+            background: #6d6b6b;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        .rocket>.body:after {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 0px;
+            overflow: hidden;
+            width: inherit;
+            height: inherit;
+            background: #c9e5fd;
+            border-radius: 50%;
+        }
+        .rocket>.body:before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            left: 10px;
+            top: 38px;
+            background: #a3d2f7;
+            z-index: 1;
+            border-radius: 50%;
+            border: 2px solid #b9b6b6;
+        }
+        .rocket {
+            top: 25px;
+            position: absolute;
+            width: 51px;
+            height: 150px;
+            animation: round 4s linear infinite;
+            transform-origin: 200px;
+            left: -100px;
+        }
+        .rocket>.body {
+            position: absolute;
+            top: 0px;
+            left: 5px;
+            overflow: hidden;
+            content: '';
+            position: absolute;
+            /* left: 0; */
+            /* top: 0; */
+            overflow: hidden;
+            width: 100px;
+            height: 120px;
+            /* background: #c9e5fd; */
+            border-radius: 50%;
+            z-index: 11;
+        }
+        .wing{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            background: #f9701d;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .wing:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: inherit;
+            height: 122%;
+            background: rgb(255, 252, 252);
+            border-radius: 50%;
+        }
+        .fire-inner{
+            position: absolute;
+            top: 107px;
+            left: 21px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            z-index: 111;
+            overflow: hidden;
+            animation: scale 0.4s infinite;
+        }
+        .fire-inner:before {
+            content: '';
+            width: inherit;
+            height: inherit;
+            position: absolute;
+            top: 0;
+            left: -20px;
+            background: red;
+            border-radius: 50%;
+            z-index: 1111;
+        }
+        .fire-outer{
+            position: absolute;
+            top: 104px;
+            left: 18px;
+            width: 41px;
+            height: 41px;
+            border-radius: 50%;
+            overflow: hidden;
+            animation: scale 0.3s infinite;
+        }
+        .fire-outer:before {
+            content: '';
+            width: inherit;
+            height: inherit;
+            position: absolute;
+            top: 0;
+            left: -27px;
+            background: #f96e43;
+            border-radius: 50%;
+        }
+        .wrapper{
+            width: 204px;
+            height: 200px;
+            margin: auto;
+            margin: 100px auto;
+            position: relative;
+        }
+        @keyframes round{
+            from {
+                transform: rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+        @keyframes scale{
+            from{
+                transform: scaleY(1);
+            }
+            to{
+                transform: scaleY(1.2);   
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sun">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+        </div>
+        <div class="rocket">
+            <div class="body"></div>
+            <div class="wing"></div>
+            <div class="fire-inner"></div>
+            <div class="fire-outer"></div>
+        </div>
+    </div>
+</body>
+</html>
